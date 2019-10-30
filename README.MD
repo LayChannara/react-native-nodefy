@@ -19,6 +19,21 @@ npm i --save-dev rn-nodeify@latest
 ./node_modules/.bin/rn-nodeify --hack --install
 ```
 
+### Import shim.js in project index.js
+```js
+import './shim.js'
+import {AppRegistry} from 'react-native';
+import App from './App';
+import {name as appName} from './app.json';
+```
+
+### Test modules in project app.js
+```js
+import crypto from 'crypto'
+
+console.log(crypto.randomBytes(32).toString('hex'));
+```
+
 ### Update package.json in script section
 ```json
 {
